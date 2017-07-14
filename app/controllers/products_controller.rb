@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
         format.html
         format.js {redirect_to products_path, notice: 'Item was successfully added.'}
       else
-        render :new
+        format.html { redirect_to products_path , notice: "You must fill in ALL fields"}
       end
     end
   end
