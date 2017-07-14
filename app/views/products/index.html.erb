@@ -11,8 +11,11 @@
     <% @products.each do |product| %>
       <div class="col s4">
         <%= link_to product_path(product), remote:true do %>
-          <h4><%= product.name %></h4>
+          <h4><%= product.name %> </h4>
           <p><%= number_to_currency product.price %></p>
+          <% end %>
+          <% if current_user && current_user.admin %>
+            <%= link_to "Delete", product_path(product),style: "color: red", remote: true, :data => {:confirm => "You sure?", :method => "delete"} %>
           <% end %>
         <%= form_for @order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
