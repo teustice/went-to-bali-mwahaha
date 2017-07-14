@@ -3,10 +3,12 @@ class Seed
   def self.begin
     seed = Seed.new
     seed.generate_products
+    seed.generate_admin
   end
 
   def generate_products
     Product.destroy_all
+    User.destroy_all
     product_images = [
       "https://codepo8.github.io/canvas-images-and-pixels/img/horse.png",
       "https://www.dhresource.com/0x0s/f2-albu-g3-M01-45-79-rBVaHVXMYiyAdhjeAAKMXVH87ho921.jpg/horse-boy-mask-halloween-animation-game-show.jpg",
@@ -24,6 +26,17 @@ class Seed
         image: product_images.sample)
     end
     p "added #{Product.count} products"
+  end
+
+  def generate_admin
+    User.create!(
+      name: "Admin",
+      email: "admin@admin.com",
+      password: "1234567",
+      password_confirmation: "1234567",
+      admin: true
+    )
+    p "created admin"
   end
 end
 
