@@ -1,7 +1,3 @@
-To set up:
-
-* `rake db:setup`
-
 # E-commerce Site
 
 Rails E-commerce Store is a <a href="http://rubyonrails.org/">Ruby on Rails</a> application which demonstrates the core functionality of an e-commerce web shop. Users can browse items, add items to their cart and purchase a product using <a href="https://stripe.com/">stripe</a>. Shop admins can add, edit or remove products.
