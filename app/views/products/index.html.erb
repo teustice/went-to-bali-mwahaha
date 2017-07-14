@@ -2,6 +2,10 @@
 <div id="modal-background" onclick="$(this).hide();">
   <div id="info-div"></div>
 </div>
+<% if current_user && current_user.admin %>
+  <%= link_to "add a product", new_product_path, remote:true %>
+  <div id="new-product-form"></div>
+<% end %>
 <div class="row">
   <div class="section">
     <% @products.each do |product| %>
