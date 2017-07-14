@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html
-        format.js {redirect_to products_path}
+        format.js {redirect_to products_path, notice: 'Item was successfully added.'}
       else
         render :new
       end
@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
     @product.destroy
     respond_to do |format|
       format.html
-      format.js { redirect_to products_path }
+      format.js { redirect_to products_path, notice: 'Item was successfully deleted.' }
     end
   end
 
