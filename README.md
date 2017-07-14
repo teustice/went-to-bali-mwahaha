@@ -33,6 +33,23 @@ PUB_KEY = "public key"
 SEC_KEY = "secret key"
 ```
 
+### Refactored
+* Made the following asynchronous
+  * Add a product to the cart
+  * Delete a product from the cart
+  * Show product details
+* Added the following admin features
+  * Add a product as Admin
+  * Delete a product as Admin
+  * Update a product as Admin
+* Added the following validations
+  * Validate product quantity is >= 1
+  * Validate all properties of a product on creation
+  * Validate that the quantity form is not empty
+* Misc
+  * Updated seed file with product images
+  * Added Stripe for checkout
+  * Write specs for models
 
 ### Authors
 Tanner Eustice, Some guy in Bali
