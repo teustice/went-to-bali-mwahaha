@@ -2,7 +2,7 @@
 <div id="modal-background" onclick="$(this).hide();">
   <div id="info-div"></div>
 </div>
-<% if current_user && current_user.admin %>
+<% if admin %>
   <%= link_to "add a product", new_product_path, remote:true %>
   <div id="new-product-form"></div>
   <div id="edit-product-form"></div>
@@ -16,7 +16,7 @@
           <h4><%= product.name %> </h4>
           <p><%= number_to_currency product.price %></p>
           <% end %>
-          <% if current_user && current_user.admin %>
+          <% if admin %>
             <%= link_to "edit this product", edit_product_path(product), remote:true %>
             <%= link_to "Delete", product_path(product),style: "color: red", remote: true, :data => {:confirm => "You sure?", :method => "delete"} %>
           <% end %>

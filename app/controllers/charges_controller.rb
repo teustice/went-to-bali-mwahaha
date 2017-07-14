@@ -18,6 +18,9 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    # reset cart
+    session[:order_id] = nil
     flash[:notice] = "Thanks, you paid $#{@amount}!"
     redirect_to products_path
   rescue Stripe::CardError => e
